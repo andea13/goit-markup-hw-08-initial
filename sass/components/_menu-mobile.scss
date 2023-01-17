@@ -1,29 +1,23 @@
-
 .mobile--menu {
-  display: flex;
-  align-content: space-between;
-  margin: 0;
-  padding: 0;
-  border: none;
-  color: transparent;
-  width: 100%;
-  max-width: 480px;
-  max-height: 60px;
-  height: auto;
+    display: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: transparent;
+    width: 100%;
+    max-width: 480px;
+    max-height: 60px;
+    height: auto;
 
-@media (min-width: 480px) {
-display: none;
-}
-}
+    &.is-open{
+        display: block;
+    }
 
-
-.menu--button{
-.icon--cross{
-  display: none;
-}
+    @media (min-width: 480px) {
+        display: none;
+    }
 }
 
-
-
-
-
+.menu--button .icon--cross {
+    display: none;
+}
