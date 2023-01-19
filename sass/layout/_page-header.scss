@@ -1,11 +1,61 @@
 .header {
-    border-bottom: 1px solid var(--header-border);
+  position: relative;
+  border-bottom: 1px solid var(--header-border);
 }
+
+.header--burger {
+  @include for-tablet-portrait-up{
+  display: none;}
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border-bottom: 10px;
+  padding: 0;
+  margin: 0;
+  border: none;
+ color: transparent;
+ background-color: var(--white-color);
+}
+
 
 
 .logo--header {
-    padding-top: 24px;
-    padding-bottom: 25px;
-    color: var(--logo-color);
-    @extend %logo;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  color: var(--logo-color);
+  @extend %logo;
+@include for-phone-only {
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
+}
+
+// .header--burger {
+//   position: absolute;
+//   top: 10;
+//   right: 15;
+//   margin: 0;
+//   padding-top: 22px;
+//   padding-bottom: 22px;
+//   width: 24px;
+//   height: 16px;
+//   border: none;
+//   background-color: transparent;
+
+//   &.is-open {
+//     .mobile-menu--list {
+//       display: block;
+//     }
+//   }
+
+//   @media (min-width: 768px) {
+//     display: none;
+//   }
+// }
+
+// .logo--header {
+//   padding-top: 24px;
+//   padding-bottom: 25px;
+//   color: var(--logo-color);
+//   @extend %logo;
+// }
