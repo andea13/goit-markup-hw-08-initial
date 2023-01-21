@@ -9,97 +9,31 @@
   width: 100%;
   max-height: 796px;
   height: 100vh;
-  background-color: var(--white-color);
+  background-color: var(--primary-button-color);
   transform: translateX(-100%);
   transition: transform 500ms;
-
-  &--close {
-    display: none;
-    // @include for-phone-only {
-    //   position: absolute;
-    //   top: 10px;
-    //     right: 15px;
-    //     border-bottom: 10px;
-    //     padding: 0;
-    //     margin: 0;
-    //     border: none;
-    //     color: transparent;
-    //     background-color: var(--white-color);
-    // position: absolute;
-    // top: 10px;
-    // right: 15px;
-    // bottom: 15px;
-    // padding-top: 16px;
-    // padding-bottom: 16px;
-  }
 }
 
-&.is-open {
-  transform: translateX(0);
+.mobile-menu.is-open {
+  transform: translateX(0);}
 
-  &--open {
+.mobile-menu--open {
     display: none;
-  }
-
-  &--close {
-    @include for-phone-only {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      border-bottom: 10px;
-      padding: 0;
-      margin: 0;
-      border: none;
-      background-color: transparent;
-    }
-
-    //     display: fixed;
-    //     margin: 0;
-    //     padding: 0;
-    //     border: none;
-    //     background-color: transparent;
-    //   max-width: 480px;
-    //   max-height: 796px;
-    //   width: 100%;
-    //   height: 100%;
-
-    // .header--burger{
-    // position: fixed;
-    //     top: 0;
-    //     right: 0;
-    // }
-
-    // .mobile-menu--close {
-    //         display: none;
-
-    // //   background-color: var(--white-color);
-    // //   transform: translateX(-100%);
-    // //   transition: transform 500ms;
-
-    //     // transform: translateX(0);
-
-    //     // &--close {
-    //     //   position: absolute;
-    //     //   top: 10px;
-    //     //   right: 15px;
-    //     //   background-color: transparent;
-    //     //   border: none;
-    //     }
-
-    //     .mobile-menu--list {
-    //       display: none;
-    //     }
-
-    // &:hover {
-    //   fill: var(--accent-color);
-    // }
-
-    //   @media (max-width: 480px) {
-    //     max-width: 480px;
-    //     width: 100%;
-    //     max-height: 60px;
-    //     height: 100%;
-    //   }
-    // }
-  }
 }
+
+.mobile-menu--close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border-bottom: 10px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+        fill: var(--accent-color);
+      }
+  }
+
+
