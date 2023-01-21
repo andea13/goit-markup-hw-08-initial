@@ -963,7 +963,6 @@ body {
   max-height: 796px;
   height: 100vh;
   padding-top: 48px;
-  padding-bottom: 48px;
   padding-left: 40px;
   background-color: var(--primary-button-color);
   -webkit-transform: translateX(-100%);
@@ -1048,13 +1047,12 @@ body {
 }
 
 .mobile-networks {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 .mobile-networks--link {
   color: var(--accent-color);
@@ -1436,7 +1434,7 @@ a:hover .product--overlay {
           transform: translateY(0);
 }
 
-.container, .container .container-hero {
+.container, .container-hero {
   min-width: 320px;
   max-width: 1200px;
   padding-right: 15px;
@@ -1444,27 +1442,14 @@ a:hover .product--overlay {
   margin-right: auto;
   margin-left: auto;
 }
-@media (max-width: 479px) {
-  .container, .container .container-hero {
-    min-width: 320px;
-    max-width: 480px;
-    width: 100%;
-    max-height: 796px;
-    height: 100vh;
-  }
-}
-.container .container-hero {
-  text-align: center;
-  padding-bottom: 0;
-}
-.container .container--header {
+
+.container--header {
   display: inline-block;
   -ms-flex-line-pack: justify;
       align-content: space-between;
-  border-bottom: none;
 }
 @media (min-width: 480px) {
-  .container .container--header {
+  .container--header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1478,12 +1463,27 @@ a:hover .product--overlay {
     padding-left: 15px;
   }
 }
-.container .container-team {
+
+.container--mobile {
+  min-width: 320px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 796px;
+  height: 100vh;
+}
+
+.container-hero {
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.container-team {
   margin-left: auto;
   margin-right: auto;
   background-color: var(--secondary-button-background-color);
 }
-.container .team-list--container {
+
+.team-list--container {
   display: block;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -1494,30 +1494,35 @@ a:hover .product--overlay {
   background-color: var(--primary-button-color);
   text-align: center;
 }
-.container .team-list--container .section-subtitle,
-.container .team-list--container .team-list--subtitle {
+.team-list--container .section-subtitle,
+.team-list--container .team-list--subtitle {
   display: block;
   text-align: center;
 }
-.container .container--client-list {
+
+.container--client-list {
   margin-top: 0;
   margin-bottom: 0;
 }
-.container .container--footer {
+
+.container--footer {
   max-width: 1200px;
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.container .subscription--container {
+
+.subscription--container {
   padding: 0;
   margin-left: 93px;
 }
-.container .filter--container {
+
+.filter--container {
   max-width: 1200px;
   margin: 0, auto;
   padding: 0, 15px;
 }
-.container .container--footer {
+
+.container--footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1525,10 +1530,12 @@ a:hover .product--overlay {
       -ms-flex-align: baseline;
           align-items: baseline;
 }
-.container .container--footer-networks {
+
+.container--footer-networks {
   margin-left: 70px;
 }
-.container .form-field--container {
+
+.form-field--container {
   position: relative;
   width: 448px;
 }
@@ -1699,7 +1706,7 @@ a:hover .product--overlay {
   color: transparent;
   background-color: var(--white-color);
 }
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .header--burger {
     display: none;
   }
