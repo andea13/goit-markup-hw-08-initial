@@ -25,8 +25,8 @@
     display: inline-block;
     align-content: space-between;
     border-bottom: none;
-
-    @media (min-width: 480px) {
+    
+      @include for-tablet-portrait-up {
       display: flex;
       align-items: center;
       max-width: 1200px;
