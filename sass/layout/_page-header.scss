@@ -4,8 +4,11 @@
 }
 
 .header--burger {
+  
   @include for-tablet-landscape-up{
-  display: none;}
+  display: none;
+}
+
   position: absolute;
   top: 10px;
   right: 15px;

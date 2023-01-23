@@ -612,19 +612,26 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 30px;
 }
 
 .client-list--item {
-  -ms-flex-preferred-size: calc((100% - 150px) / 6);
-      flex-basis: calc((100% - 150px) / 6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
   color: var(--network-icon-color);
-  margin-right: 30px;
+  margin: 0px 0px 30px 0px;
 }
 .client-list--item:last-child {
   margin-right: 0;
@@ -646,6 +653,7 @@ body {
   color: inherit;
   width: 170px;
   height: 92px;
+  margin-right: 0;
   margin-bottom: 0;
   border: 1px solid var(--network-icon-color);
   border-radius: 4px;
@@ -670,8 +678,6 @@ body {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/hero-img.jpg");
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-img.jpg");
   background-color: var(--hero-background-color);
-  height: 400px;
-  max-width: 480px;
   padding-top: 200px;
   padding-bottom: 200px;
   background-repeat: no-repeat;
@@ -679,18 +685,6 @@ body {
   background-position: center;
   margin-left: auto;
   margin-right: auto;
-}
-@media (min-width: 768px) {
-  .section-hero {
-    height: 400px;
-    max-width: 768px;
-  }
-}
-@media (min-width: 1200px) {
-  .section-hero {
-    height: 600px;
-    max-width: 1600px;
-  }
 }
 
 .section-hero--title {
@@ -1005,7 +999,7 @@ body {
   top: 0;
   left: 0;
   min-width: 320px;
-  max-width: 480px;
+  max-width: 767px;
   width: 100%;
   max-height: 796px;
   height: 100vh;
@@ -1020,9 +1014,6 @@ body {
   transition: transform 500ms, -webkit-transform 500ms;
 }
 
-.mobile-nav {
-  margin-bottom: 306px;
-}
 .mobile-nav--link {
   font-weight: 500;
   font-size: 40px;
@@ -1031,6 +1022,9 @@ body {
   color: var(--section-title-color);
   -webkit-transition: color var(--transition-time-main) var(--time-function);
   transition: color var(--transition-time-main) var(--time-function);
+}
+.mobile-nav--link__active {
+  color: var(--accent-color);
 }
 .mobile-nav--link:hover, .mobile-nav--link:focus {
   color: var(--accent-color);
@@ -1049,19 +1043,20 @@ body {
   margin-bottom: 64px;
 }
 
-.mobile-contacts--link__mail {
+.mobile-contacts--link__mail,
+.mobile-contacts--link__tel {
   font-weight: 500;
   letter-spacing: 0.02em;
   text-decoration: none;
+}
+
+.mobile-contacts--link__mail {
   font-size: 34px;
   line-height: 1.17;
   color: var(--accent-color);
 }
 
 .mobile-contacts--link__tel {
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-decoration: none;
   font-size: 24px;
   line-height: 1.18;
   color: var(--primary-text-color);
@@ -1080,16 +1075,10 @@ body {
   position: absolute;
   top: 10px;
   right: 15px;
-  border-bottom: 10px;
-  padding: 0;
-  margin: 0;
   border: none;
   background-color: transparent;
-  fill: var(--section-title-color);
-  -webkit-transition: fill var(--transition-time-main) var(--time-function);
-  transition: fill var(--transition-time-main) var(--time-function);
 }
-.mobile-menu--close:hover, .mobile-menu--close:focus {
+.mobile-menu--close:hover {
   fill: var(--accent-color);
 }
 
@@ -1425,8 +1414,9 @@ body {
 .team-list--card {
   max-width: 450px;
   width: 100%;
-  max-height: 460px;
+  max-height: 622px;
   height: 100%;
+  margin-bottom: 30px;
   background-color: var(--secondary-button-background-color);
 }
 .team-list--card:first-child {
@@ -1435,19 +1425,6 @@ body {
 .team-list--card:last-child {
   margin-right: 0;
 }
-@media (min-width: 1200px) {
-  .team-list--card {
-    max-width: 270px;
-    max-height: 428px;
-  }
-}
-@media (min-width: 768px) {
-  .team-list--card {
-    max-width: 270px;
-    max-height: 428px;
-  }
-}
-
 .team-list--label {
   font-size: 16px;
   list-style: 1.19;
@@ -1504,18 +1481,36 @@ a:hover .product--overlay {
 }
 
 .container, .container-hero {
-  min-width: 320px;
-  max-width: 1200px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+@media (min-width: 480px) {
+  .container, .container-hero {
+    width: 480px;
+  }
+}
+@media (min-width: 768px) {
+  .container, .container-hero {
+    width: 768px;
+  }
+}
+@media (min-width: 1200px) {
+  .container, .container-hero {
+    width: 1200px;
+  }
 }
 
 .container--header {
   display: inline-block;
   -ms-flex-line-pack: justify;
       align-content: space-between;
+}
+@media (min-width: 768px) {
+  .container--header {
+    margin: 0 auto;
+  }
 }
 @media (min-width: 480px) {
   .container--header {
@@ -1547,8 +1542,6 @@ a:hover .product--overlay {
 }
 
 .container-team {
-  margin-left: auto;
-  margin-right: auto;
   background-color: var(--secondary-button-background-color);
 }
 
@@ -1562,6 +1555,11 @@ a:hover .product--overlay {
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   background-color: var(--primary-button-color);
   text-align: center;
+}
+@media (min-width: 480px) {
+  .team-list--container {
+    max-width: 450px;
+  }
 }
 .team-list--container .section-subtitle,
 .team-list--container .team-list--subtitle {
@@ -1612,7 +1610,7 @@ a:hover .product--overlay {
 .contacts-nav {
   display: none;
 }
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .contacts-nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1711,7 +1709,7 @@ a:hover .product--overlay {
 .site-nav {
   display: none;
 }
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .site-nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1786,7 +1784,7 @@ a:hover .product--overlay {
   padding-bottom: 25px;
   color: var(--logo-color);
 }
-@media (max-width: 479px) {
+@media (max-width: 767px) {
   .logo--header {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -1802,7 +1800,7 @@ a:hover .product--overlay {
   padding-bottom: 0;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 767px) {
   .section--spec {
     display: none;
   }

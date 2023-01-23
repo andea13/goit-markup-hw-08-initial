@@ -6,7 +6,7 @@
 .site-nav {
   display: none;
 
-  @media (min-width: 480px) {
+  @include for-tablet-landscape-up {
     display: flex;
     margin-left: 93px;
 
